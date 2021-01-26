@@ -26,14 +26,11 @@ export default function App() {
     //       setSeasons(formatSeasons(res.data._embedded.episodes));
     //     });
     // };
-    FetchShow(axios.then(res => {
-      
+    FetchShow()
+          .then(res => {
       setShow(res.data);
-
       setSeasons(formatSeasons(res.data._embedded.episodes));
-
-  }));
-
+  });
   },[]);
 
   const handleSelect = e => {
